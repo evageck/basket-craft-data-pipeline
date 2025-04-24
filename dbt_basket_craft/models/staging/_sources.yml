@@ -15,3 +15,33 @@ sources:
          - name: created_at
          - name: description
          - name: product_name
+
+version: 2
+
+sources:
+  - name: basket_craft
+    database: basket_craft
+    schema: raw
+    tables:
+      - name: products
+        columns:
+          - name: product_id
+            description: Primary key for products
+            tests:
+              - unique
+              - not_null
+          - name: created_at
+          - name: description
+          - name: product_name
+      - name: orders
+        columns:
+          - name: order_id
+            description: Primary key for orders
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+          - name: primary_product_id
+          - name: price_usd
+          - name: created_at
+
