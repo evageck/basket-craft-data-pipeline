@@ -45,7 +45,8 @@ df = pd.read_sql('SELECT * FROM orders', mysql_engine)
 df
 # %%
 # Write dataframe to products table in Postgres (raw schema)
-df.to_sql('orders', pg_engine, schema='raw', if_exists='replace', index=False)
+df.to_sql('orders', pg_engine, schema='raw', if_exists='append', index=False)
+
 
 # %%
 
