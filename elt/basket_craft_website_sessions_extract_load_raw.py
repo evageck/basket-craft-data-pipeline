@@ -47,7 +47,7 @@ df = pd.read_sql(
 )
 # %%
 # 6. Load to raw.website_sessions in Postgres
-df.to_sql('website_sessions', pg_engine, schema='raw', if_exists='replace', index=False)
+df.to_sql('website_sessions', pg_engine, schema='raw', if_exists='append', index=False)
 
 # %%
 print(f'{len(df)} records loaded into raw.website_sessions table in Postgres.')
