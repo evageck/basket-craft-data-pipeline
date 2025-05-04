@@ -46,6 +46,7 @@ df
 # %%
 # Write dataframe to products table in Postgres (raw schema)
 df.to_sql('products', pg_engine, schema='raw', if_exists='append', index=False)
+
 # %%
 
 print(f'{len(df)} records loaded into Postgres products table.')
