@@ -1,6 +1,6 @@
   ## Project Summary
 
-  This project repository demonstrates an end-to-end ELT pipeline using a mock commerce dataset from the MySQL-based Basket Craft database. The pipeline extracts data from the MySQL data lake, loads it into a raw schema within a PostgreSQL warehouse, transforms it using dbt, and visualizes it in Looker Studio. We practiced this process during lesson exercises using the products and orders datasets. For Quiz 3, we applied the same methodology independently, focusing on the website sessions data.
+  This project repository demonstrates an end-to-end ELT (extract, load, transform) pipeline using a mock commerce dataset from the MySQL-based Basket Craft database. The pipeline extracts data from the MySQL data lake, loads it into a raw schema within a PostgreSQL warehouse, transforms it using dbt, and visualizes it in Looker Studio. We practiced this process during lesson exercises using the products and orders datasets. For Quiz 3, we applied the same methodology independently, focusing on the website sessions data.
 
   I wrote three Python scripts to extract and load the Basket Craft orders, products, and website sessions data into the raw PostgreSQL schema. These scripts are now triggered by a GitHub Actions workflow that runs every 15 minutes on a cron schedule and uses GitHub Secrets to manage environment variables securely.
 
