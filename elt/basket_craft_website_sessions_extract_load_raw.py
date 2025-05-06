@@ -40,13 +40,13 @@ mysql_engine = create_engine(mysql_conn_string)
 pg_engine = create_engine(pg_conn_string)
 
 # %%
-# 5. Read website_sessions table from MySQL (Dec 1–31, 2023)
+# Read website_sessions table from MySQL (Dec 1–31, 2023)
 df = pd.read_sql(
     "SELECT * FROM website_sessions WHERE created_at BETWEEN '2023-12-01' AND '2023-12-31 23:59:59';",
     mysql_engine
 )
 # %%
-# 6. Load to raw.website_sessions in Postgres
+# Load to raw.website_sessions in Postgres
 df.to_sql('website_sessions', pg_engine, schema='raw', if_exists='append', index=False)
 
 # %%
